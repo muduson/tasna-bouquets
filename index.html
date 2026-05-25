@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Tasna Bouquets | Elegant Floral Arrangements</title>
+    <!-- Font Awesome 6 (Free CDN for icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts: Poppins + Playfair Display for elegance -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fefaf5;
+            color: #2e241f;
+            scroll-behavior: smooth;
+        }
+
+        /* custom scroll */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f0e3d4;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c49a6c;
+            border-radius: 12px;
+        }
+
+        h1, h2, h3, .logo {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* header & nav */
+        header {
+            background: #fffaf5;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02), 0 1px 2px rgba(0,0,0,0.03);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(2px);
+            background: rgba(255,250,245,0.92);
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 18px 0;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #b45f3b;
+            letter-spacing: -0.3px;
+        }
+        .logo span {
+            color: #6b3e26;
+            font-weight: 500;
+        }
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #3a2a22;
+            transition: 0.2s;
+            font-size: 1rem;
+        }
+        .nav-links a:hover {
+            color: #b45f3b;
+        }
+
+        /* hero section */
+        .hero {
+            background: linear-gradient(105deg, #fff4ea 0%, #ffeede 100%);
+            padding: 60px 0 70px;
+            text-align: center;
+            border-radius: 0 0 40px 40px;
+            margin-bottom: 40px;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            color: #55331f;
+            margin-bottom: 16px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 620px;
+            margin: 0 auto;
+            color: #5f4a38;
+            line-height: 1.4;
+        }
+        .hero-badge {
+            background: #fff0e4;
+            display: inline-block;
+            padding: 6px 18px;
+            border-radius: 60px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #b45f3b;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        /* services section */
+        .services {
+            padding: 50px 0 30px;
+        }
+        .section-title {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 48px;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 3px;
+            background: #e1b38b;
+            margin: 12px auto 0;
+            border-radius: 4px;
+        }
+        .services-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+            justify-content: center;
+        }
+        .service-card {
+            background: white;
+            border-radius: 28px;
+            padding: 32px 20px;
+            flex: 1 1 220px;
+            text-align: center;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.03);
+            transition: all 0.25s ease;
+            border: 1px solid #f5e3d4;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: #edd7c4;
+            box-shadow: 0 20px 30px -12px rgba(112, 66, 39, 0.1);
+        }
+        .service-icon {
+            font-size: 2.4rem;
+            color: #c28254;
+            margin-bottom: 18px;
+        }
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            color: #492f1f;
+        }
+        .service-card p {
+            font-size: 0.9rem;
+            color: #6f5543;
+            line-height: 1.4;
+        }
+
+        /* bouquet gallery */
+        .bouquets {
+            padding: 40px 0 70px;
+            background: #fffcf8;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            gap: 32px;
+            margin-top: 20px;
+        }
+        .bouquet-card {
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            transition: 0.2s;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            border: 1px solid #f0e2d6;
+        }
+        .bouquet-img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+        .bouquet-card:hover .bouquet-img {
+            transform: scale(1.02);
+        }
+        .bouquet-info {
+            padding: 18px 18px 22px;
+        }
+        .bouquet-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #3f2c1d;
+        }
+        .price {
+            font-size: 1.55rem;
+            font-weight: 700;
+            color: #b45f3b;
+            margin: 10px 0 12px;
+            letter-spacing: -0.3px;
+        }
+        .price small {
+            font-size: 0.85rem;
+            font-weight: 400;
+            color: #866f5a;
+        }
+        .desc {
+            font-size: 0.85rem;
+            color: #6a4f39;
+            margin-bottom: 18px;
+            line-height: 1.4;
+        }
+        .order-hint {
+            display: inline-block;
+            background: #f9efe7;
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #b25d34;
+        }
+
+        /* WhatsApp fixed button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            background: #25D366;
+            color: white;
+            border-radius: 60px;
+            width: 64px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+            transition: all 0.2s;
+            z-index: 1000;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+        .whatsapp-float:hover {
+            background: #1ebe5d;
+            transform: scale(1.05);
+            box-shadow: 0 12px 24px rgba(37, 211, 102, 0.45);
+        }
+        .whatsapp-text-tooltip {
+            position: fixed;
+            bottom: 100px;
+            right: 28px;
+            background: #2c2c2c;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            white-space: nowrap;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s;
+            z-index: 999;
+        }
+        .whatsapp-float:hover + .whatsapp-text-tooltip {
+            opacity: 1;
+        }
+
+        /* footer / contact snippet */
+        .footer {
+            background: #f5ede5;
+            padding: 40px 0 28px;
+            margin-top: 40px;
+            text-align: center;
+            border-top: 1px solid #e8d9ce;
+        }
+        .footer p {
+            color: #644b38;
+            font-size: 0.85rem;
+        }
+        .contact-small {
+            margin-top: 12px;
+        }
+        .contact-small a {
+            color: #b45f3b;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        @media (max-width: 700px) {
+            .navbar {
+                flex-direction: column;
+                gap: 12px;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+            .whatsapp-float {
+                width: 54px;
+                height: 54px;
+                font-size: 1.9rem;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+        button, a {
+            transition: all 0.2s;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">Tasna <span>Bouquets</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#bouquets">Bouquets</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section (home anchor) -->
+    <section id="home">
+        <div class="hero">
+            <div class="container">
+                <div class="hero-badge">✦ artisanal floral design ✦</div>
+                <h1>Fresh, timeless, & handcrafted</h1>
+                <p>Discover the elegance of Tasna Bouquets — each arrangement tells a story of love, celebration, and nature's finest blooms. Delivered with care.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our Floral Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-hand-sparkles"></i></div>
+                    <h3>Custom Arrangements</h3>
+                    <p>Personalized bouquets for weddings, anniversaries, or just because. We design according to your vision.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-calendar-alt"></i></div>
+                    <h3>Weekly Subscription</h3>
+                    <p>Fresh blooms delivered to your doorstep every week. Joy that never fades.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-church"></i></div>
+                    <h3>Event Styling</h3>
+                    <p>From intimate gatherings to grand celebrations – elevate your event with floral masterpieces.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-gift"></i></div>
+                    <h3>Same-Day Delivery</h3>
+                    <p>Order before 2PM and get your bouquet delivered within the city. Express love instantly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bouquets Gallery with Pictures & Price Tags -->
+    <section id="bouquets" class="bouquets">
+        <div class="container">
+            <h2 class="section-title">Signature Bouquets</h2>
+            <div class="gallery">
+                <!-- Bouquet 1 -->
+                <div class="bouquet-card">
+                    <img class="bouquet-img" src="https://images.pexels.com/photos/931177/pexels-photo-931177.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Rose elegance bouquet" loading="lazy">
+                    <div class="bouquet-info">
+                        <div class="bouquet-title">Crimson Elegance</div>
+                        <div class="price">$49 <small>USD</small></div>
+                        <div class="desc">Luxurious red roses, eucalyptus, and baby's breath — classic romance in full bloom.</div>
+                        <span class="order-hint"><i class="fab fa-whatsapp" style="margin-right: 4px;"></i> order via WhatsApp</span>
+                    </div>
+                </div>
+                <!-- Bouquet 2 -->
+                <div class="bouquet-card">
+                    <img class="bouquet-img" src="https://images.pexels.com/photos/1312314/pexels-photo-1312314.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Sunny daisies and sunflowers" loading="lazy">
+                    <div class="bouquet-info">
+                        <div class="bouquet-title">Golden Fields</div>
+                        <div class="price">$42 <small>USD</small></div>
+                        <div class="desc">Bright sunflowers, yellow chrysanthemums, and fresh greenery – pure sunshine.</div>
+                        <span class="order-hint"><i class="fab fa-whatsapp" style="margin-right: 4px;"></i> order via WhatsApp</span>
+                    </div>
+                </div>
+                <!-- Bouquet 3 -->
+                <div class="bouquet-card">
+                    <img class="bouquet-img" src="https://images.pexels.com/photos/696996/pexels-photo-696996.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Pastel spring peonies" loading="lazy">
+                    <div class="bouquet-info">
+                        <div class="bouquet-title">Spring Blush</div>
+                        <div class="price">$58 <small>USD</small></div>
+                        <div class="desc">Blush peonies, soft pink roses, and lavender sprigs – dreamy & delicate.</div>
+                        <span class="order-hint"><i class="fab fa-whatsapp" style="margin-right: 4px;"></i> order via WhatsApp</span>
+                    </div>
+                </div>
+                <!-- Bouquet 4 -->
+                <div class="bouquet-card">
+                    <img class="bouquet-img" src="https://images.pexels.com/photos/1122863/pexels-photo-1122863.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Wildflower mixed bouquet" loading="lazy">
+                    <div class="bouquet-info">
+                        <div class="bouquet-title">Meadow Whisper</div>
+                        <div class="price">$44 <small>USD</small></div>
+                        <div class="desc">Wildflowers mix, daisies, blue thistle and fern – rustic & effortless charm.</div>
+                        <span class="order-hint"><i class="fab fa-whatsapp" style="margin-right: 4px;"></i> order via WhatsApp</span>
+                    </div>
+                </div>
+                <!-- Bouquet 5 -->
+                <div class="bouquet-card">
+                    <img class="bouquet-img" src="https://images.pexels.com/photos/568540/pexels-photo-568540.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Tropical exotic bouquet" loading="lazy">
+                    <div class="bouquet-info">
+                        <div class="bouquet-title">Tropical Bliss</div>
+                        <div class="price">$67 <small>USD</small></div>
+                        <div class="desc">Birds of paradise, anthuriums, monstera leaves – exotic and vibrant.</div>
+                        <span class="order-hint"><i class="fab fa-whatsapp" style="margin-right: 4px;"></i> order via WhatsApp</span>
+                    </div>
+                </div>
+                <!-- Bouquet 6 -->
+                <div class="bouquet-card">
+                    <img class="bouquet-img" src="https://images.pexels.com/photos/1285613/pexels-photo-1285613.jpeg?auto=compress&cs=tinysrgb&w=600" alt="White & green minimalist" loading="lazy">
+                    <div class="bouquet-info">
+                        <div class="bouquet-title">Ivory Serenity</div>
+                        <div class="price">$53 <small>USD</small></div>
+                        <div class="desc">White lilies, eucalyptus, and freesia – timeless & serene elegance.</div>
+                        <span class="order-hint"><i class="fab fa-whatsapp" style="margin-right: 4px;"></i> order via WhatsApp</span>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 42px;">
+                <p style="color:#947a66;">✨ Custom requests? We'll craft your dream bouquet — just ask via WhatsApp ✨</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- tiny contact anchor -->
+    <div id="contact"></div>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <p>🌸 Tasna Bouquets — where petals meet passion 🌸</p>
+        <p style="margin-top: 10px;"><i class="fas fa-phone-alt"></i> +1 (555) 789-1234  |  <i class="fas fa-envelope"></i> hello@tasnabouquets.com</p>
+        <div class="contact-small">
+            <p>📍 45 Bloom Street, Floral District — Open daily 9AM–7PM</p>
+            <p style="margin-top: 14px;">© 2025 Tasna Bouquets – Handcrafted with love</p>
+        </div>
+    </div>
+</footer>
+
+<!-- WHATSAPP FLOATING BUTTON (connected with WhatsApp API - direct chat to supplier) -->
+<!-- Using WhatsApp API via wa.me link with a pre-filled message for supplier contact -->
+<a href="https://wa.me/971509876543?text=Hello%20Tasna%20Bouquets!%20I'm%20interested%20in%20ordering%20a%20bouquet%20%F0%9F%8C%B8%20Can%20you%20help%20me%20with%20pricing%20and%20availability%3F" 
+   class="whatsapp-float" 
+   target="_blank" 
+   rel="noopener noreferrer"
+   aria-label="Contact supplier on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+</a>
+<div class="whatsapp-text-tooltip">Chat with supplier 📲</div>
+
+<!-- small script for dynamic year or optional, but keeps clean -->
+<script>
+    // simple interaction to show that the WhatsApp link uses the official WhatsApp API (wa.me)
+    // Optionally add a small console greeting (non-intrusive)
+    (function() {
+        // you can ensure any extra dynamic if needed: e.g smooth scroll for anchor links
+        document.querySelectorAll('.nav-links a, .footer a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId && targetId.startsWith('#')) {
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+        // also optional hover effect
+        console.log("Tasna Bouquets — Fresh flowers & WhatsApp ready");
+    })();
+</script>
+
+<!-- Additional hidden note: all bouquets images are from royalty-free Pexels library, styled to present beautiful bouquets.
+     WhatsApp API connection: uses the official WhatsApp URL scheme (wa.me) with a pre-filled message to the supplier's number.
+     Replace the number placeholder with actual supplier's WhatsApp number for production. 
+     The current number shown is a placeholder "+971509876543" representing a dummy number, but it's fully functional as per WhatsApp API. -->
+</body>
+</html>
