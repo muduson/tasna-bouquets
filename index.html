@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, viewport-fit=cover" />
+    <title>Tasna Bouquets | Baby Pink · Eternal Flowers</title>
+    <!-- Font Awesome 6 (Free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <!-- Google Fonts: Playfair Display + Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+        /* ---------- RESET & BASE ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fff9fb;
+            color: #3f2a2a;
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #ffe6ef;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #f5a3c1;
+            border-radius: 12px;
+        }
+
+        h1,
+        h2,
+        h3,
+        .logo {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ---------- NAVIGATION (sticky top) ---------- */
+        .nav-strip {
+            background: rgba(255, 248, 250, 0.96);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            box-shadow: 0 2px 18px rgba(255, 182, 193, 0.12);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #ffe2ec;
+            padding: 10px 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .logo-small {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #e28fb0;
+            letter-spacing: -0.2px;
+        }
+        .logo-small span {
+            color: #c76e93;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #7a4d5b;
+            transition: 0.2s;
+            font-size: 0.95rem;
+            padding: 4px 0;
+        }
+        .nav-links a:hover {
+            color: #e28fb0;
+        }
+
+        /* ---------- HERO (baby pink) ---------- */
+        .hero {
+            background: linear-gradient(135deg, #ffeef4 0%, #ffe2ec 100%);
+            padding: 48px 0 56px;
+            text-align: center;
+            border-bottom: 2px solid #fbc6d9;
+        }
+
+        .logo-banner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .logo-banner .brand-icon {
+            font-size: 3rem;
+            color: #e28fb0;
+            background: #fff2f7;
+            width: 90px;
+            height: 90px;
+            border-radius: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 8px;
+            box-shadow: 0 6px 20px rgba(226, 143, 176, 0.2);
+            border: 2px solid #ffd9e6;
+        }
+
+        .logo-banner h1 {
+            font-size: 3rem;
+            color: #b45b78;
+            letter-spacing: 1px;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        .logo-banner .tagline {
+            font-size: 1.15rem;
+            font-weight: 400;
+            color: #aa7a85;
+            letter-spacing: 3px;
+            word-spacing: 4px;
+            border-top: 2px solid #fbc6d9;
+            padding-top: 10px;
+            display: inline-block;
+        }
+
+        .logo-banner .sub-tag {
+            background: #fff2f7;
+            padding: 5px 22px;
+            border-radius: 60px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #dc8aa9;
+            letter-spacing: 1.2px;
+            margin-top: 6px;
+            box-shadow: 0 1px 8px rgba(255, 188, 207, 0.2);
+        }
+
+        .hero-contact {
+            margin-top: 16px;
+            font-size: 0.9rem;
+            color: #b45b78;
+            background: rgba(255, 255, 255, 0.45);
+            padding: 8px 20px;
+            border-radius: 60px;
+            display: inline-flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 6px 18px;
+        }
+        .hero-contact i {
+            margin-right: 4px;
+        }
+
+        /* ---------- SECTION TITLES ---------- */
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 32px;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            color: #aa6f84;
+        }
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #f5b7cc;
+            margin: 10px auto 0;
+            border-radius: 8px;
+        }
+
+        /* ---------- SERVICES (white background) ---------- */
+        .services {
+            padding: 50px 0 30px;
+            background: #fffafc;
+        }
+
+        .services-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 22px;
+            justify-content: center;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 28px;
+            padding: 28px 18px;
+            flex: 1 1 190px;
+            min-width: 160px;
+            max-width: 270px;
+            text-align: center;
+            transition: all 0.25s ease;
+            border: 1px solid #ffe0e9;
+            box-shadow: 0 12px 24px -12px rgba(233, 146, 169, 0.08);
+        }
+        .service-card:hover {
+            transform: translateY(-4px);
+            border-color: #ffccdb;
+            box-shadow: 0 20px 28px -12px rgba(221, 121, 147, 0.15);
+        }
+        .service-icon {
+            font-size: 2.4rem;
+            color: #e595b2;
+            margin-bottom: 14px;
+        }
+        .service-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: #a25977;
+        }
+        .service-card p {
+            font-size: 0.85rem;
+            color: #8b6272;
+            line-height: 1.4;
+        }
+
+        /* ---------- HOW TO ORDER (baby pink) ---------- */
+        .order-section {
+            padding: 50px 0 40px;
+            background: linear-gradient(135deg, #ffeef4 0%, #ffe2ec 100%);
+            border-top: 2px solid #fbc6d9;
+            border-bottom: 2px solid #fbc6d9;
+        }
+
+        .order-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .order-step {
+            background: white;
+            border-radius: 60px 16px 16px 60px;
+            padding: 12px 20px 12px 14px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 6px 16px rgba(233, 146, 169, 0.1);
+            border: 1px solid #ffe0e9;
+            flex: 1 1 170px;
+            min-width: 150px;
+            transition: 0.2s;
+        }
+        .order-step:hover {
+            transform: translateY(-2px);
+            border-color: #fcc3d4;
+            box-shadow: 0 10px 22px rgba(226, 143, 176, 0.12);
+        }
+        .order-step .step-num {
+            background: #ffeef4;
+            color: #e28fb0;
+            font-weight: 700;
+            font-size: 1rem;
+            width: 36px;
+            height: 36px;
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .order-step p {
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: #5f3f47;
+            line-height: 1.2;
+        }
+        .order-step i {
+            color: #e28fb0;
+            font-size: 0.85rem;
+            margin-right: 3px;
+        }
+
+        /* ---------- PRICING (white background) ---------- */
+        .pricing-section {
+            padding: 50px 0 50px;
+            background: #fffafc;
+        }
+
+        .pricing-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            align-items: stretch;
+        }
+
+        .size-card,
+        .addon-card {
+            background: white;
+            border-radius: 28px;
+            padding: 28px 24px;
+            border: 1px solid #ffe0e9;
+            box-shadow: 0 12px 24px -12px rgba(233, 146, 169, 0.1);
+            flex: 1 1 280px;
+            min-width: 240px;
+            transition: 0.2s;
+        }
+        .size-card:hover,
+        .addon-card:hover {
+            border-color: #fcc3d4;
+            box-shadow: 0 18px 28px -14px rgba(226, 143, 176, 0.15);
+        }
+
+        .size-card h3,
+        .addon-card h3 {
+            font-size: 1.5rem;
+            color: #b45b78;
+            border-bottom: 2px solid #ffe2ec;
+            padding-bottom: 12px;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        .size-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px dashed #f5dbe4;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        .size-item:last-child {
+            border-bottom: none;
+        }
+        .size-name {
+            color: #5f3f47;
+        }
+        .size-price {
+            color: #dc8aa9;
+            font-weight: 600;
+        }
+
+        .addon-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 12px;
+            margin-top: 6px;
+        }
+        .addon-tag {
+            background: #fff2f7;
+            padding: 6px 16px;
+            border-radius: 60px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #b45b78;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px solid #ffd9e6;
+        }
+        .addon-tag i {
+            color: #e28fb0;
+            font-size: 0.75rem;
+        }
+
+        /* ---------- GALLERY (5 cards, white background) ---------- */
+        .bouquets {
+            padding: 50px 0 50px;
+            background: #fff9fb;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 24px;
+            margin-top: 8px;
+        }
+        .bouquet-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            transition: 0.25s;
+            box-shadow: 0 12px 24px rgba(243, 179, 199, 0.08);
+            border: 1px solid #ffe3ed;
+        }
+        .bouquet-card:hover {
+            transform: scale(1.01);
+            border-color: #ffc0d3;
+            box-shadow: 0 20px 28px -10px rgba(231, 137, 163, 0.15);
+        }
+        .bouquet-img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+            display: block;
+        }
+        .bouquet-info {
+            padding: 16px 18px 20px;
+        }
+        .bouquet-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #b26684;
+        }
+        .price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #dc8aa9;
+            margin: 4px 0 8px;
+        }
+        .price small {
+            font-size: 0.75rem;
+            font-weight: 400;
+            color: #b88497;
+        }
+        .desc {
+            font-size: 0.8rem;
+            color: #8e6272;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+        .order-hint {
+            display: inline-block;
+            background: #ffeef4;
+            padding: 4px 14px;
+            border-radius: 60px;
+            font-size: 0.65rem;
+            font-weight: 500;
+            color: #db7e9e;
+        }
+        .order-hint i {
+            color: #25D366;
+        }
+
+        /* ---------- WHATSAPP FLOATING BUTTON ---------- */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            background: #25D366;
+            color: white;
+            border-radius: 60px;
+            width: 64px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.4rem;
+            box-shadow: 0 8px 28px rgba(37, 211, 102, 0.45);
+            transition: all 0.25s;
+            z-index: 1000;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+        .whatsapp-float:hover {
+            background: #20b859;
+            transform: scale(1.08);
+            box-shadow: 0 12px 34px rgba(37, 211, 102, 0.55);
+        }
+        .whatsapp-float:active {
+            transform: scale(0.95);
+        }
+
+        .whatsapp-text-tooltip {
+            position: fixed;
+            bottom: 100px;
+            right: 28px;
+            background: #c57290;
+            color: white;
+            padding: 6px 16px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            white-space: nowrap;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.25s;
+            z-index: 999;
+            box-shadow: 0 4px 16px rgba(197, 114, 144, 0.3);
+        }
+        .whatsapp-float:hover+.whatsapp-text-tooltip {
+            opacity: 1;
+        }
+
+        /* ---------- FOOTER ---------- */
+        .footer {
+            background: #fff5f8;
+            padding: 36px 0 28px;
+            text-align: center;
+            border-top: 1px solid #ffe2ec;
+        }
+        .footer p {
+            color: #b27c8b;
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+        .footer .footer-location {
+            margin-top: 8px;
+            font-size: 0.85rem;
+            color: #b27c8b;
+        }
+        .footer .footer-location i {
+            color: #e28fb0;
+            margin: 0 4px;
+        }
+        .footer .copyright {
+            margin-top: 14px;
+            font-size: 0.75rem;
+            color: #b88497;
+            border-top: 1px solid #ffe2ec;
+            padding-top: 14px;
+        }
+        .footer .copyright i {
+            color: #e28fb0;
+        }
+
+        /* ---------- RESPONSIVE ---------- */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+                padding: 4px 0;
+            }
+            .nav-links {
+                gap: 14px;
+                justify-content: center;
+            }
+            .nav-links a {
+                font-size: 0.85rem;
+            }
+
+            .logo-banner h1 {
+                font-size: 2.2rem;
+            }
+            .logo-banner .tagline {
+                font-size: 0.95rem;
+                letter-spacing: 2px;
+            }
+            .hero {
+                padding: 32px 0 40px;
+            }
+
+            .section-title {
+                font-size: 1.7rem;
+            }
+
+            .service-card {
+                flex: 1 1 140px;
+                min-width: 130px;
+                padding: 20px 14px;
+            }
+            .service-card h3 {
+                font-size: 1rem;
+            }
+
+            .order-step {
+                flex: 1 1 140px;
+                min-width: 130px;
+                padding: 10px 16px;
+                border-radius: 40px 12px 12px 40px;
+            }
+            .order-step .step-num {
+                width: 30px;
+                height: 30px;
+                font-size: 0.85rem;
+            }
+            .order-step p {
+                font-size: 0.75rem;
+            }
+
+            .size-card,
+            .addon-card {
+                flex: 1 1 200px;
+                min-width: 180px;
+                padding: 20px 18px;
+            }
+            .size-card h3,
+            .addon-card h3 {
+                font-size: 1.2rem;
+            }
+
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+                gap: 16px;
+            }
+            .bouquet-img {
+                height: 170px;
+            }
+
+            .whatsapp-float {
+                width: 56px;
+                height: 56px;
+                font-size: 2rem;
+                bottom: 20px;
+                right: 20px;
+            }
+            .whatsapp-text-tooltip {
+                bottom: 86px;
+                right: 20px;
+                font-size: 0.65rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 14px;
+            }
+            .logo-small {
+                font-size: 1.2rem;
+            }
+            .nav-links {
+                gap: 10px;
+            }
+            .nav-links a {
+                font-size: 0.78rem;
+            }
+
+            .logo-banner h1 {
+                font-size: 1.8rem;
+            }
+            .logo-banner .brand-icon {
+                width: 68px;
+                height: 68px;
+                font-size: 2.2rem;
+            }
+            .logo-banner .tagline {
+                font-size: 0.8rem;
+                letter-spacing: 1px;
+            }
+            .hero-contact {
+                font-size: 0.7rem;
+                padding: 4px 12px;
+            }
+
+            .section-title {
+                font-size: 1.4rem;
+            }
+
+            .service-card {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+            .order-step {
+                flex: 1 1 100%;
+                border-radius: 40px;
+            }
+            .size-card,
+            .addon-card {
+                flex: 1 1 100%;
+                min-width: unset;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+            .bouquet-img {
+                height: 140px;
+            }
+            .bouquet-info {
+                padding: 10px 12px 14px;
+            }
+            .bouquet-title {
+                font-size: 0.9rem;
+            }
+            .price {
+                font-size: 1rem;
+            }
+            .desc {
+                font-size: 0.7rem;
+            }
+            .order-hint {
+                font-size: 0.6rem;
+                padding: 3px 10px;
+            }
+
+            .whatsapp-float {
+                width: 48px;
+                height: 48px;
+                font-size: 1.6rem;
+                bottom: 16px;
+                right: 16px;
+            }
+            .whatsapp-text-tooltip {
+                display: none;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+            .bouquet-img {
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION (sticky top) -->
+    <div class="nav-strip">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo-small">Tasna-<span>Bouquets</span></div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#order">How to Order</a></li>
+                    <li><a href="#sizes">Sizes & Add‑ons</a></li>
+                    <li><a href="#bouquets">Bouquets</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- FIRST SECTION: HERO (baby pink) -->
+    <section id="home">
+        <div class="hero">
+            <div class="container">
+                <div class="logo-banner">
+                    <div class="brand-icon"><i class="fas fa-seedling"></i></div>
+                    <h1>Tasna Bouquets</h1>
+                    <div class="tagline">✨ customized handmade satin bouquets · eternal flowers ✨</div>
+                    <div class="sub-tag"><i class="fas fa-heart" style="color:#e28fb0; margin-right: 4px;"></i> WHERE LOVE BLOOMS <i class="fas fa-heart" style="color:#e28fb0; margin-left: 4px;"></i></div>
+                    <div class="hero-contact">
+                        <span><i class="fas fa-phone-alt"></i> +255 760 425 560</span>
+                        <span><i class="fas fa-map-pin"></i> No 70, Chwaku Street, Dar es Salaam</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECOND SECTION: SERVICES (white) -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">🌸 Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-palette"></i></div>
+                    <h3>Custom Pink Dreams</h3>
+                    <p>Tailored bouquets in blush, rose, and baby pink hues — ideal for proposals, birthdays, or self-love.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-draw-polygon"></i></div>
+                    <h3>Sculpted Floral Designs</h3>
+                    <p>Artfully crafted arrangements in unique shapes — from classic hearts to modern geometric patterns.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-gift"></i></div>
+                    <h3>Signature Gift Wrapping</h3>
+                    <p>Premium color-coordinated wrapping, silk ribbons & elegant final touches that make opening an experience.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-calendar-check"></i></div>
+                    <h3>Bespoke Pre-Ordering</h3>
+                    <p>Minimum 5-day advance notice guarantees the freshest, highest-quality blooms for your special occasion.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- THIRD SECTION: HOW TO ORDER (baby pink) -->
+    <section id="order" class="order-section">
+        <div class="container">
+            <h2 class="section-title">📋 How to Order</h2>
+            <div class="order-grid">
+                <div class="order-step"><span class="step-num">1</span><p><i class="fas fa-camera"></i> Send screenshot of bouquet you like</p></div>
+                <div class="order-step"><span class="step-num">2</span><p><i class="fas fa-palette"></i> Choose your preferred colors</p></div>
+                <div class="order-step"><span class="step-num">3</span><p><i class="fas fa-pen-fancy"></i> Add name / custom message</p></div>
+                <div class="order-step"><span class="step-num">4</span><p><i class="fas fa-coins"></i> Pay deposit to confirm</p></div>
+                <div class="order-step"><span class="step-num">5</span><p><i class="fas fa-truck"></i> Provide delivery info & date</p></div>
+                <div class="order-step"><span class="step-num">6</span><p><i class="fas fa-check-circle"></i> Wait confirmation & receive your bouquet</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOURTH SECTION: SIZES & ADD-ONS (white) -->
+    <section id="sizes" class="pricing-section">
+        <div class="container">
+            <h2 class="section-title">💐 Bouquet Styles & Add‑ons</h2>
+            <div class="pricing-wrapper">
+                <div class="size-card">
+                    <h3><i class="fas fa-arrow-right" style="color:#e28fb0; margin-right: 8px;"></i>Sizes</h3>
+                    <div class="size-item"><span class="size-name">Small (5–10 roses)</span><span class="size-price">15,000 Tsh ... 25,000 Tsh</span></div>
+                    <div class="size-item"><span class="size-name">Medium (12–20 roses)</span><span class="size-price">30,000 Tsh ... 40,000 Tsh</span></div>
+                    <div class="size-item"><span class="size-name">Large (25–40 roses)</span><span class="size-price">45,000 Tsh ... 55,000 Tsh</span></div>
+                    <div class="size-item"><span class="size-name">Luxurious (50+ roses)</span><span class="size-price">60,000+ Tsh</span></div>
+                    <p style="margin-top: 14px; font-size: 0.7rem; color: #b88497; text-align: right; border-top: 1px solid #ffe2ec; padding-top: 12px;">
+                        <i class="fas fa-info-circle" style="color:#e28fb0;"></i> prices in Tanzanian Shillings (Tsh)
+                    </p>
+                </div>
+                <div class="addon-card">
+                    <h3><i class="fas fa-star" style="color:#e28fb0; margin-right: 8px;"></i>Add‑ons</h3>
+                    <div class="addon-grid">
+                        <span class="addon-tag"><i class="fas fa-crown"></i> Crown</span>
+                        <span class="addon-tag"><i class="fas fa-circle"></i> Pearls</span>
+                        <span class="addon-tag"><i class="fas fa-font"></i> Acrylic name</span>
+                        <span class="addon-tag"><i class="fas fa-arrow-up"></i> Topper</span>
+                        <span class="addon-tag"><i class="fas fa-ribbon"></i> Name ribbon</span>
+                        <span class="addon-tag"><i class="fas fa-butterfly"></i> Butterflies</span>
+                        <span class="addon-tag"><i class="fas fa-sparkles"></i> Glitters</span>
+                        <span class="addon-tag"><i class="fas fa-lightbulb"></i> LED lights</span>
+                    </div>
+                    <p style="margin-top: 16px; font-size: 0.75rem; color: #b27c8b; border-top: 1px solid #ffe2ec; padding-top: 14px;">
+                        <i class="fas fa-gem" style="color:#e28fb0;"></i> all add‑ons available upon request
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FIFTH SECTION: BOUQUET GALLERY (5 cards) -->
+    <section id="bouquets" class="bouquets">
+        <div class="container">
+            <h2 class="section-title">Signature Pink Bouquets</h2>
+            <div class="gallery">
+                <!-- Card 1 -->
+                <div class="bouquet-card">
+                    <img class="bouquet-img" src="https://images.pexels.com/photos/1872046/pexels-photo-1872046.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Blush pink romantic" loading="lazy">
+                    <div class="bouquet-info">
+                        <div class="bouquet-title">Blush Whisper</div>
+                        <div class="price">$52 <small>USD</small></div>
+                        <div class="desc">Peonies, roses & baby's breath — pure romance.</div>
+                        <span class="order-hint"><i class="fab fa-whatsapp"></i> order via WhatsApp</span>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="bouquet-card">
+                    <img class="bouquet-img" src="https://images.pexels.com/photos/1268558/pexels-photo-1268558.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Soft pink tulips" loading="lazy">
+                    <div class="bouquet-info">
+                        <div class="bouquet-title">Ballet Slipper</div>
+                        <div class="price">$45 <small>USD</small></div>
+                        <div class="desc">Tulips, lisianthus, eucalyptus — elegant.</div>
+                        <span class="order-hint"><i class="fab fa-whatsapp"></i> order via WhatsApp</span>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="bouquet-card">
+                    <img class="bouquet-img" src="https://images.pexels.com/photos/754637/pexels-photo-754637.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Candy pink hydrangeas" loading="lazy">
+                    <div class="bouquet-info">
+                        <div class="bouquet-title">Candyfloss Dream</div>
+                        <div class="price">$59 <small>USD</small></div>
+                        <div class="desc">Hydrangeas, tea roses & lavender.</div>
+                        <span class="order-hint"><i class="fab fa-whatsapp"></i> order via WhatsApp</span>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="bouquet-card">
+                    <img class="bouquet-img" src="https://images.pexels.com/photos/1302766/pexels-photo-1302766.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Vintage pink garden roses" loading="lazy">
+                    <div class="bouquet-info">
+                        <div class="bouquet-title">Antique Rose</div>
+                        <div class="price">$63 <small>USD</small></div>
+                        <div class="desc">Garden roses, dusty miller, peach carnations.</div>
+                        <span class="order-hint"><i class="fab fa-whatsapp"></i> order via WhatsApp</span>
+                    </div>
+                </div>
+                <!-- Card 5 -->
+                <div class="bouquet-card">
+                    <img class="bouquet-img" src="https://images.pexels.com/photos/1302760/pexels-photo-1302760.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cherry blossom inspired" loading="lazy">
+                    <div class="bouquet-info">
+                        <div class="bouquet-title">Sakura Magic</div>
+                        <div class="price">$48 <small>USD</small></div>
+                        <div class="desc">Cherry blossom, pale pink waxflowers & gypsophila.</div>
+                        <span class="order-hint"><i class="fab fa-whatsapp"></i> order via WhatsApp</span>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align:center; margin-top:32px; color:#c989a2; font-size:0.95rem;">
+                <i class="fas fa-heart" style="color:#e28fb0;"></i> custom orders welcome — just ask! <i class="fas fa-heart" style="color:#e28fb0;"></i>
+            </div>
+        </div>
+    </section>
+
+    <div id="contact"></div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p>🎀 Tasna Bouquets — where love blooms, eternally 🎀</p>
+            <p class="footer-location">
+                <i class="fas fa-map-pin"></i> No 70, Chwaku Street, Dar es Salaam, Tanzania
+                &nbsp;&nbsp;|&nbsp;&nbsp;
+                <i class="fas fa-phone-alt"></i> +255 760 425 560
+            </p>
+            <div class="copyright">
+                <i class="fas fa-copyright"></i> 2026 Tasna Bouquets – handmade satin bouquets with love. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLOATING BUTTON - Direct chat to Tasna -->
+    <a href="https://wa.me/255760425560?text=Hello%20Tasna%20Bouquets!%20I'd%20like%20to%20order%20a%20custom%20bouquet%20🌸" 
+       class="whatsapp-float" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       aria-label="Contact Tasna Bouquets on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <div class="whatsapp-text-tooltip">💬 Order via WhatsApp</div>
+
+    <script>
+        (function() {
+            // Smooth scroll for nav links
+            document.querySelectorAll('.nav-links a, .footer a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href && href.startsWith('#')) {
+                        const target = document.querySelector(href);
+                        if (target) {
+                            e.preventDefault();
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }
+                });
+            });
+            console.log("🌸 Tasna Bouquets · baby pink elegance · WhatsApp ready");
+        })();
+    </script>
+</body>
+</html>
