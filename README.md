@@ -30,7 +30,7 @@ A beautiful one-page website for Tasna Bouquets, a floral shop showcasing bouque
 - WhatsApp API (wa.me)
 
 ## Author
-[Your Name]
+MAHMOUD KHAMIS && MUUTASIM ALI
 
 ## License
 MIT
